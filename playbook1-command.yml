@@ -1,0 +1,11 @@
+---
+- name: My second playbook
+  hosts: nodes
+  tasks:
+    - name: return motd to a registered variable
+      command: cat /etc/passwd
+      register: mymotd
+    - debug:
+        var: mymotd.stdout_lines
+          
+        
